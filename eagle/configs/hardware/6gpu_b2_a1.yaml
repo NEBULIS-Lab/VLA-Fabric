@@ -1,0 +1,6 @@
+gpu_ids: [0, 1, 2, 3, 4, 5]
+processes: 6
+batch_size: 2
+gradient_accumulation_steps: 1
+dist_backend: nccl
+ddp_timeout_minutes: 60

@@ -1,0 +1,22 @@
+task: aloha_handover_box
+development_ids: [0, 199]
+disjoint_paired_ids: [200, 399]
+single_stage:
+  I0: runs/handover_box/D-I0.yaml
+  I1: runs/handover_box/D-I1.yaml
+  I2: runs/handover_box/D-I2.yaml
+  I3-AVG: runs/handover_box/D-I3.yaml
+  I3-RAW: runs/handover_box/D-I3-RAW.yaml
+  I4-AVG: runs/handover_box/D-I4-AVG.yaml
+  I4-RAW: runs/handover_box/D-I4-RAW.yaml
+  I5-AVG: runs/handover_box/D-I5-AVG.yaml
+  I5-RAW: runs/handover_box/D-I5-RAW.yaml
+common_first:
+  I2: [runs/handover_box/S-I2-stage1.yaml, runs/handover_box/S-I2-stage2.yaml]
+  I3-AVG: [runs/handover_box/S-I3-stage1.yaml, runs/handover_box/S-I3-stage2.yaml]
+  I3-RAW: [runs/handover_box/S-I3-RAW-stage1.yaml, runs/handover_box/S-I3-RAW-stage2.yaml]
+  I4-AVG: [runs/handover_box/S-I3-stage1.yaml, runs/handover_box/S-I4-AVG-stage2.yaml]
+  I4-RAW: [runs/handover_box/S-I3-RAW-stage1.yaml, runs/handover_box/S-I4-RAW-stage2.yaml]
+  I5-AVG: [runs/handover_box/S-I3-stage1.yaml, runs/handover_box/S-I5-AVG-stage2.yaml]
+  I5-RAW: [runs/handover_box/S-I3-RAW-stage1.yaml, runs/handover_box/S-I5-RAW-stage2.yaml]
+

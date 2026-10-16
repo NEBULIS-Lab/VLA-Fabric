@@ -1,0 +1,22 @@
+schema_version: 1
+validation:
+  protocol: paired
+  episodes: 200
+  condition_ids: [0, 199]
+  purpose: checkpoint_selection
+fresh:
+  protocol: paired
+  episodes: 200
+  condition_ids: [200, 399]
+  require_condition_disjoint_from_validation: true
+  checkpoint_frozen_before_launch: true
+deployment:
+  processes: 2
+  devices_per_process: 1
+  agents_per_process: 1
+  allow_peer_raw_observation: false
+determinism:
+  pair_environment_seed: true
+  pair_initial_state: true
+  pair_flow_noise: true
+

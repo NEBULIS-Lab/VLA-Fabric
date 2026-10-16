@@ -1,0 +1,17 @@
+schema_version: 1
+development:
+  protocol: paired
+  episodes: 200
+  rollout_ids: [0, 199]
+  purpose: architecture_and_checkpoint_selection
+disjoint:
+  protocol: paired
+  episodes: 200
+  rollout_ids: [200, 399]
+  require_disjoint_from_development: true
+  checkpoint_frozen_before_launch: true
+determinism:
+  pair_environment_seed: true
+  pair_initial_state: true
+  pair_diffusion_seed: true
+

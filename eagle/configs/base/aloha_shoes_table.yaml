@@ -1,0 +1,18 @@
+project_root: .
+singlevla_pretrained_path: external/TwinVLA-base
+data_root_dir: external/aloha_rlds
+data_mix: aloha_shoes_table
+max_steps: 40000
+save_at_steps: [10000, 20000, 30000, 40000]
+learning_rate: 0.0002
+weight_decay: 0.00001
+warmup_ratio: 0.01
+lr_scheduler_type: cosine
+max_grad_norm: 1.0
+seed: 2601
+bf16: true
+freeze_vision_backbone: true
+no_freeze_llm_backbone: true
+decoder_mode: separate_decoders
+loss_reduction: sum
+

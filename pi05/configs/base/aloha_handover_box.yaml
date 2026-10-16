@@ -1,0 +1,21 @@
+schema_version: 1
+task:
+  name: aloha_handover_box
+  dataset_root: external/aloha_rlds
+  simulator_root: external/tabletop_sim
+observation_ownership:
+  shared:
+    - global_camera
+  left:
+    - left_wrist_camera
+    - left_proprioception
+  right:
+    - right_wrist_camera
+    - right_proprioception
+action:
+  environment_dim: 20
+  local_dim: 10
+  ownership_order:
+    - left
+    - right
+

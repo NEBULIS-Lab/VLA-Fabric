@@ -1,0 +1,32 @@
+task_name: ThreeRobotsStackCube-rf
+agent_count: 3
+roles:
+  - panda-0
+  - panda-1
+  - panda-2
+shared_inputs:
+  - head_camera_global
+  - language_instruction
+local_cameras:
+  - wrist_camera_agent0
+  - wrist_camera_agent1
+  - wrist_camera_agent2
+state_dimension: 9
+action_dimension: 8
+prediction_horizon: 50
+execution_horizon: 25
+flow_steps: 10
+training_seed_min: 30000
+training_seed_max: 30151
+expected_trajectories: 150
+validation_seed_min: 40000
+validation_seed_max: 40199
+fresh_seed_min: 40200
+fresh_seed_max: 40399
+normalization: q01_q99_per_role
+source_h5: data/source/ThreeRobotsStackCube/ThreeRobotsStackCube_wristcam_v1.h5
+source_metadata: data/source/ThreeRobotsStackCube/ThreeRobotsStackCube_wristcam_v1.json
+strict_release_roles:
+  cubeA: panda-0
+  cubeB: panda-1
+  cubeC: panda-2

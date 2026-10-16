@@ -1,0 +1,33 @@
+task_id: four_arm_frame_insertion
+environment: multiarm_sim.FourArmFrameInsertion
+agent_count: 4
+roles: [panda-0, panda-1, panda-2, panda-3]
+shared_inputs: [agentview, language_instruction]
+local_cameras:
+  - robot0_eye_in_hand
+  - robot1_eye_in_hand
+  - robot2_eye_in_hand
+  - robot3_eye_in_hand
+state_dimension: 9
+action_dimension: 7
+prediction_horizon: 50
+execution_horizon: 25
+flow_steps: 10
+normalization: q01_q99_per_role
+training_seed_min: 5028
+training_seed_max: 5077
+expected_trajectories: 50
+validation_seed_min: 5100
+validation_seed_max: 5299
+fresh_seed_min: 5300
+fresh_seed_max: 5499
+source_h5: data/source/frame_insertion_train.h5
+converted_h5: data/converted/frame_insertion_pi05.h5
+normalization_file: data/converted/frame_insertion_q01_q99.npz
+strict_success:
+  - four_historical_grasps
+  - lift_and_transport
+  - post_insertion
+  - four_releases
+  - retreat
+  - stable_settling

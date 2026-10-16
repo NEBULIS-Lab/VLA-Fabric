@@ -1,0 +1,22 @@
+task: aloha_shoes_table
+development_ids: [0, 199]
+disjoint_paired_ids: [200, 399]
+single_stage:
+  I0: runs/shoes_table/SHOES-D-I0.yaml
+  I1: runs/shoes_table/SHOES-D-I1.yaml
+  I2: runs/shoes_table/SHOES-D-I2.yaml
+  I3-AVG: runs/shoes_table/SHOES-D-I3-AVG.yaml
+  I3-RAW: runs/shoes_table/SHOES-D-I3-RAW.yaml
+  I4-AVG: runs/shoes_table/SHOES-D-I4-AVG.yaml
+  I4-RAW: runs/shoes_table/SHOES-D-I4-RAW.yaml
+  I5-AVG: runs/shoes_table/SHOES-D-I5-AVG.yaml
+  I5-RAW: runs/shoes_table/SHOES-D-I5-RAW.yaml
+common_first:
+  I2: [runs/shoes_table/SHOES-S-I2-stage1.yaml, runs/shoes_table/SHOES-S-I2-stage2.yaml]
+  I3-AVG: [runs/shoes_table/SHOES-S-I3-AVG-stage1.yaml, runs/shoes_table/SHOES-S-I3-AVG-stage2.yaml]
+  I3-RAW: [runs/shoes_table/SHOES-S-I3-RAW-stage1.yaml, runs/shoes_table/SHOES-S-I3-RAW-stage2.yaml]
+  I4-AVG: [runs/shoes_table/SHOES-S-I3-AVG-stage1.yaml, runs/shoes_table/SHOES-S-I4-AVG-stage2.yaml]
+  I4-RAW: [runs/shoes_table/SHOES-S-I3-RAW-stage1.yaml, runs/shoes_table/SHOES-S-I4-RAW-stage2.yaml]
+  I5-AVG: [runs/shoes_table/SHOES-S-I3-AVG-stage1.yaml, runs/shoes_table/SHOES-S-I5-AVG-stage2.yaml]
+  I5-RAW: [runs/shoes_table/SHOES-S-I3-RAW-stage1.yaml, runs/shoes_table/SHOES-S-I5-RAW-stage2.yaml]
+

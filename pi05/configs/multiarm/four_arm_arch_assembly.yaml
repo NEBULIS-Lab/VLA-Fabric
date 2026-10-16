@@ -1,0 +1,34 @@
+task_id: f2_arch_assembly
+environment: multiarm_sim.FourArmArchAssembly
+agent_count: 4
+roles: [panda-0, panda-1, panda-2, panda-3]
+shared_inputs: [agentview, language_instruction]
+audit_only_cameras: [frontview]
+local_cameras:
+  - robot0_eye_in_hand
+  - robot1_eye_in_hand
+  - robot2_eye_in_hand
+  - robot3_eye_in_hand
+state_dimension: 9
+action_dimension: 7
+prediction_horizon: 50
+execution_horizon: 25
+flow_steps: 10
+normalization: q01_q99_per_role
+training_seed_min: 6000
+training_seed_max: 6049
+expected_trajectories: 50
+validation_seed_min: 6200
+validation_seed_max: 6399
+fresh_seed_min: 6400
+fresh_seed_max: 6599
+source_h5: data/source/arch_assembly_train.h5
+converted_h5: data/converted/arch_assembly_pi05.h5
+normalization_file: data/converted/arch_assembly_q01_q99.npz
+strict_success:
+  - both_pillars_placed
+  - beam_handoff_confirmed
+  - dual_arm_seating
+  - post_seating_dual_release
+  - retreat
+  - stable_assembly

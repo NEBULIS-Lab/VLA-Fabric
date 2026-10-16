@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vla-fabric-simulation"
+version = "0.1.0"
+description = "Multi-arm manipulation tasks and demonstration interfaces"
+requires-python = ">=3.10"
+dependencies = ["numpy", "h5py", "opencv-python", "robosuite>=1.5,<1.6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

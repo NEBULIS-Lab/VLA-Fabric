@@ -1,0 +1,10 @@
+name: common_first
+stage1:
+  channels: [common]
+  steps: 10000
+stage2:
+  channels: [common, private_kv, action]
+  steps: 40000
+  initialize_agents_from_stage1: true
+  reset_optimizer_and_scheduler: true
+

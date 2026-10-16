@@ -1,0 +1,8 @@
+.publication{padding:38px 0;border-bottom:1px solid #dbe3e1;text-align:center}
+.publication h2{font-size:25px;line-height:1.4;font-weight:580;max-width:970px;margin:0 auto 20px}
+.publication p{font-size:14px;line-height:1.75;color:#657173;margin-top:6px;overflow-wrap:anywhere}
+.publication .publication-authors{font-size:16px;color:#202b2c}
+.publication-links{display:flex;justify-content:center;flex-wrap:wrap;gap:28px;margin-top:20px}
+.publication-links a{display:inline-flex;align-items:center;gap:6px;color:#287c79;font-size:14px;font-weight:600}
+.publication-links a:hover,.publication p a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:760px){.publication{padding:30px 0}.publication h2{font-size:21px}.publication .publication-authors{font-size:14px}}

@@ -1,0 +1,52 @@
+module: commvla.training.train_dual_arm
+processes: 6
+environment:
+  CUDA_VISIBLE_DEVICES: "0,1,2,3,4,5"
+  TOKENIZERS_PARALLELISM: "false"
+  WANDB_MODE: disabled
+  TF_ENABLE_ONEDNN_OPTS: "0"
+  NCCL_P2P_DISABLE: "1"
+  NCCL_IB_DISABLE: "1"
+  TORCH_NCCL_BLOCKING_WAIT: "1"
+  TORCH_NCCL_ASYNC_ERROR_HANDLING: "1"
+  PYTHONUNBUFFERED: "1"
+arguments:
+  project_root: .
+  singlevla_pretrained_path: external/TwinVLA-base
+  data_root_dir: external/aloha_rlds
+  data_mix: aloha_shoes_table
+  output_dir: outputs/shoes_table/direct/I3-RAW/SHOES-D-I3-RAW_raw_common_aloha_shoes_table_40k
+  checkpoint_request_file: outputs/shoes_table/direct/I3-RAW/SHOES-D-I3-RAW_checkpoint.request
+  remote_kv_mode: full
+  common_strategy: local_common
+  common_kv_mode: sync_qkv_avg_mlp_avg
+  common_fusion_mode: fixed_avg
+  action_token_fusion_mode: none
+  decoder_mode: separate_decoders
+  loss_reduction: sum
+  max_steps: 40000
+  save_at_steps: [10000, 20000, 30000, 40000]
+  batch_size: 2
+  gradient_accumulation_steps: 1
+  learning_rate: 0.0002
+  weight_decay: 0.00001
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_eps: 0.00000001
+  warmup_ratio: 0.01
+  lr_scheduler_type: cosine
+  max_grad_norm: 1.0
+  shuffle_buffer_size: 50000
+  num_workers: 16
+  num_parallel_calls: 16
+  log_steps: 100
+  seed: 2601
+  bf16: true
+  freeze_vision_backbone: true
+  no_freeze_llm_backbone: true
+  no_ddp_find_unused_parameters: true
+  require_expected_model_communication: true
+  remote_kv_scale: 1.0
+  remote_kv_dropout_prob: 0.0
+  dist_backend: nccl
+  ddp_timeout_minutes: 60

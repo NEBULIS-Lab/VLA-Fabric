@@ -1,0 +1,5 @@
+architecture_id: I0
+paper_name: Independent
+remote_kv_mode: no_remote
+common_kv_mode: local
+action_token_fusion_mode: none

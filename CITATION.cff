@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite VLA-Fabric when using this work."
+type: software
+title: "VLA-Fabric: Learning Interaction for Composable Multi-Arm VLA Agents"
+authors:
+  - family-names: Zhang
+    given-names: Chenglong
+  - family-names: Liu
+    given-names: Shuaijun
+  - family-names: You
+    given-names: Feiyang
+  - family-names: Hao
+    given-names: Shuyang
+  - family-names: Wu
+    given-names: Chengyu
+  - family-names: Su
+    given-names: Ningxin
+repository-code: "https://github.com/NEBULIS-Lab/VLA-Fabric"
+url: "https://nebulis-lab.com/VLA-Fabric/"
+license: MIT

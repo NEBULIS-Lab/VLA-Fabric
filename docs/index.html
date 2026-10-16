@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1012">
+  <meta name="description" content="VLA-Fabric: discovering, transferring, and scaling learned interaction between complete local VLA policies.">
+  <title>VLA-Fabric: Learning Interaction for Composable Multi-Arm VLA Agents</title>
+  <link rel="canonical" href="https://nebulis-lab.com/VLA-Fabric/">
+  <meta name="citation_title" content="VLA-Fabric: Learning Interaction for Composable Multi-Arm VLA Agents">
+  <meta name="citation_author" content="Zhang, Chenglong">
+  <meta name="citation_author" content="Liu, Shuaijun">
+  <meta name="citation_author" content="You, Feiyang">
+  <meta name="citation_author" content="Hao, Shuyang">
+  <meta name="citation_author" content="Wu, Chengyu">
+  <meta name="citation_author" content="Su, Ningxin">
+  <meta name="citation_pdf_url" content="https://nebulis-lab.com/VLA-Fabric/paper/VLA-Fabric.pdf">
+  <link rel="stylesheet" href="static/publication.css">
+  <link rel="preload" as="image" href="static/figures/scene-poster.webp" fetchpriority="high">
+  <link rel="stylesheet" href="static/site.css?v=6"><link rel="icon" href="data:,">
+  <script type="module" src="static/app.js?v=9"></script>
+  <noscript><style>.scene-start,.scene-status{display:none}</style></noscript>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="wordmark" href="#top">VLA-Fabric<span class="wordmark-dot"></span></a>
+    <nav aria-label="Primary navigation"><a href="#method">Research</a><a href="#simulation">Simulation</a><a href="#physical">Real robots</a></nav>
+    <a class="header-code" href="https://github.com/NEBULIS-Lab/VLA-Fabric">Repository <i data-lucide="arrow-up-right"></i></a>
+  </div></header>
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-background" aria-hidden="true"><video class="ambient active" muted playsinline preload="none" poster="static/media/frame4-global.jpg"></video><video class="ambient" muted playsinline preload="none"></video></div>
+      <div class="hero-copy"><p class="eyebrow">Complete local policies. Learned interaction.</p><h1 id="page-title">VLA-Fabric</h1><p class="hero-subtitle">Learning multi-arm coordination.</p></div>
+      <div id="robot-stage" class="robot-stage" data-phase="idle" aria-busy="false" aria-label="Interactive four-arm coordination illustration"><img class="scene-poster" width="1600" height="1200" loading="eager" decoding="async" src="static/figures/scene-poster.webp" fetchpriority="high" alt="Four articulated robot arms holding a shared frame around a central post"><button id="scene-start" class="scene-start" type="button" disabled aria-label="Explore interactive scene"><span class="scene-start-icon"><i data-lucide="play"></i></span><span class="scene-start-label">Explore</span></button><div class="scene-status" role="status" aria-live="polite" hidden><span class="scene-status-title">Loading scene</span><span class="scene-status-detail">Preparing four agents</span><span class="scene-progress-row" aria-hidden="true"><span class="scene-progress"><span class="scene-progress-fill"></span></span><span class="scene-progress-value" hidden></span></span><button class="scene-retry icon-button" title="Reload page" aria-label="Reload page" hidden><i data-lucide="rotate-ccw"></i></button></div><div class="agent-labels" aria-hidden="true"></div></div>
+      <div class="scene-controls" hidden><div class="agent-selector" role="group" aria-label="Highlight an agent"><button data-agent="0" aria-label="Highlight Agent 1" aria-pressed="false" disabled>01</button><button data-agent="1" aria-label="Highlight Agent 2" aria-pressed="false" disabled>02</button><button data-agent="2" aria-label="Highlight Agent 3" aria-pressed="false" disabled>03</button><button data-agent="3" aria-label="Highlight Agent 4" aria-pressed="false" disabled>04</button></div><span id="scene-phase">Preparing scene</span><div class="scene-tools"><button id="scene-pause" class="icon-button" title="Pause scene" aria-label="Pause scene" disabled><i data-lucide="pause"></i></button><button id="scene-reset" class="icon-button" title="Reset camera" aria-label="Reset camera" disabled><i data-lucide="rotate-ccw"></i></button></div></div>
+      <div class="hero-bottom"><span>One arm. One VLA. One agent.</span><a href="#method">Explore the research <i data-lucide="arrow-down"></i></a></div>
+    </section>
+
+    <section class="publication" aria-labelledby="publication-title"><div class="wrap">
+      <h2 id="publication-title">VLA-Fabric: Learning Interaction for Composable Multi-Arm VLA Agents</h2>
+      <p class="publication-authors">Chenglong Zhang, Shuaijun Liu, Feiyang You, Shuyang Hao, Chengyu Wu, Ningxin Su<sup>*</sup></p>
+      <p>The Hong Kong University of Science and Technology (Guangzhou)</p>
+      <p><sup>*</sup>Corresponding author: <a href="mailto:ningxinsu@hkust-gz.edu.cn">ningxinsu@hkust-gz.edu.cn</a></p>
+      <nav class="publication-links" aria-label="Publication resources"><a href="paper/VLA-Fabric.pdf">Paper <i data-lucide="arrow-up-right"></i></a><a href="https://github.com/NEBULIS-Lab/VLA-Fabric">Repository <i data-lucide="arrow-up-right"></i></a><a href="https://github.com/NEBULIS-Lab/VLA-Fabric/blob/main/CITATION.cff">Citation <i data-lucide="arrow-up-right"></i></a></nav>
+    </div></section>
+
+    <section id="method" class="section overview" aria-labelledby="method-title"><div class="wrap">
+      <p class="eyebrow">How Should VLA Agents Interact?</p>
+      <h2 id="method-title">From one joint policy<br>to interacting local policies.</h2>
+      <p class="lead">VLA-Fabric establishes a learnable collaboration interface between complete, arm-local VLA policies. Each agent retains its observations and action generation, while learned internal representations connect it to its peers.</p>
+      <figure><button class="figure-zoom" aria-label="Enlarge VLA-Fabric overview"><img src="static/figures/roadmap.webp" loading="lazy" decoding="async" width="2400" height="1302" alt="Centralized, high-level, implicit, and explicit coordination; VLA-Fabric research overview"><span><i data-lucide="expand"></i></span></button><figcaption>Local observation and action ownership, with explicit interaction during policy computation.</figcaption></figure>
+    </div></section>
+    <nav class="chapter-nav" aria-label="Research chapters"><div class="wrap">
+      <a href="#discovery" data-chapter="discovery"><span>01</span> Discover the interface <i data-lucide="arrow-down"></i></a>
+      <a href="#transfer" data-chapter="transfer"><span>02</span> Transfer across backbones <i data-lucide="arrow-down"></i></a>
+      <a href="#scale" data-chapter="scale"><span>03</span> Extend the team <i data-lucide="arrow-down"></i></a>
+    </div></nav>
+
+    <section id="discovery" class="section chapter" aria-labelledby="discovery-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">01 / Interaction discovery</p><h2 id="discovery-title">Where should<br>policies interact?</h2></div><p>A decomposable bimanual policy provides a controlled test bed. We separate its two SingleVLA branches and vary the information exchanged, the interaction operator, and fine-tuning.</p></div>
+      <figure><button class="figure-zoom" aria-label="Enlarge interaction design space"><img src="static/figures/interaction-design.webp" loading="lazy" decoding="async" width="2400" height="838" alt="Decomposing TwinVLA into complete local policies and varying interaction entry, operator, and fine-tuning"><span><i data-lucide="expand"></i></span></button></figure>
+      <div class="figure-heading"><h3>Architecture and adaptation, considered together.</h3><p>32 runs across Handover Box and Shoes Table.</p></div>
+      <figure class="study-figure"><button class="figure-zoom" aria-label="Enlarge controlled architecture study"><img src="static/figures/interaction-study.webp" loading="lazy" decoding="async" width="2400" height="1981" alt="Architecture study comparing Single-stage and Common-first adaptation, development and disjoint paired evaluation, and selected 100k follow-ups"><span><i data-lucide="expand"></i></span></button><figcaption>200 development conditions and 200 disjoint paired evaluation conditions. Gold bars mark the targeted 100k RAW follow-up.</figcaption></figure>
+      <div class="findings">
+        <div><span>Interaction entry</span><h3>Interaction structure shapes coordination.</h3><p>Private K/V supplies useful peer context. The architecture study examines how Common aggregation, action-side interaction, and adaptation shape the use of peer information.</p></div>
+        <div><span>Adaptation</span><h3>The learning recipe matters.</h3><p>Common-first combines an additional Common-path initialization stage with full-interaction fine-tuning and improves the matched SingleVLA configurations. Fine-tuning recipes are adapted to each backbone.</p></div>
+        <div><span>A reusable realization</span><h3>Reusable coordination functions.</h3><p>The tasks reveal different preferences for Common aggregation and action fusion. RAW Common, Private K/V, and Linear readout fusion form the canonical SingleVLA realization carried forward.</p></div>
+      </div>
+    </div></section>
+
+    <section id="transfer" class="section chapter transfer" aria-labelledby="transfer-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">02 / Cross-backbone transfer</p><h2 id="transfer-title">The same functions.<br>Different implementations.</h2></div><p>We transfer the coordination principle through backbone-specific implementations and fine-tuning in homogeneous π<sub>0.5</sub> teams.</p></div>
+      <figure><button class="figure-zoom" aria-label="Enlarge cross-backbone architecture"><img src="static/figures/architecture-transfer.webp?v=20260926-9e8c948d" loading="lazy" decoding="async" width="2400" height="1895" alt="SingleVLA readout interaction and pi0.5 prefix and Action Expert interaction"><span><i data-lucide="expand"></i></span></button><figcaption>Both realizations generate continuous actions locally. SingleVLA fuses readouts before its local action sampler; π<sub>0.5</sub> exchanges evolving states within the Action Expert.</figcaption></figure>
+      <div class="findings roles">
+        <div><span>Common</span><h3>Shared context</h3><p>Common representations form shared context within the VLM or multimodal prefix.</p></div>
+        <div><span>Private K/V</span><h3>Receiver-specific context</h3><p>Peer keys and values condition local queries, while action generation remains receiver-local.</p></div>
+        <div><span>Action</span><h3>Coordination near decoding</h3><p>Linear readout fusion in SingleVLA becomes gated residual peer attention in π<sub>0.5</sub>'s iterative Action Expert.</p></div>
+      </div>
+      <div class="evidence-block"><div class="figure-heading"><h3>Bimanual capability</h3><p>Task success (%)</p></div>
+        <div class="table-scroll"><table><caption class="sr-only">Bimanual capability across four tasks</caption><thead><tr><th scope="col">Policy</th><th scope="col">Handover Box</th><th scope="col">Shoes Table</th><th scope="col">Handover Mic</th><th scope="col">Scan Object</th></tr></thead>
+        <tbody><tr><th scope="row">RDT-1B</th><td>69.4</td><td>66.0</td><td>90.0</td><td>4.0</td></tr><tr><th scope="row">π<sub>0</sub></th><td>78.8</td><td>82.4</td><td>98.0</td><td>18.0</td></tr><tr><th scope="row">TwinVLA</th><td>78.0</td><td>84.8</td><td>84.0</td><td>11.0</td></tr><tr class="family-start"><th scope="row">SingleVLA-Fabric</th><td>80.0</td><td>70.0</td><td>84.0</td><td>5.5</td></tr><tr class="featured"><th scope="row">π<sub>0.5</sub>-Fabric</th><td>80.5</td><td>94.5</td><td>97.5</td><td>33.0</td></tr></tbody></table></div>
+        <p class="media-note">External results are taken from <a href="https://openreview.net/forum?id=jG9W6nAwVz">TwinVLA</a> for Box/Shoes and TwinVLA Mic/Scan, and from the <a href="https://robotwin-platform.github.io/leaderboard.html">RoboTwin leaderboard</a> for RDT-1B and π<sub>0</sub> on Mic/Scan. Fabric rows use 200 conditions per task. The table compares complete systems with their respective pretraining and evaluation protocols.</p>
+      </div>
+      <div class="evidence-block"><div class="figure-heading"><h3>Which interactions do trained policies use?</h3><p>Fixed-weight inference removals</p></div>
+        <div class="diagnostic-grid">
+          <div class="table-scroll"><table><caption>SingleVLA-Fabric · success (%)</caption><thead><tr><th scope="col">Setting</th><th scope="col">Box</th><th scope="col">Shoes</th><th scope="col">Mic</th><th scope="col">Scan</th></tr></thead><tbody>
+          <tr class="featured"><th scope="row">Full</th><td>75.0</td><td>78.0</td><td>81.5</td><td>5.5</td></tr><tr><th scope="row">w/o Common</th><td>38.5</td><td>19.0</td><td>52.5</td><td>2.0</td></tr><tr><th scope="row">w/o Private K/V</th><td>59.0</td><td>64.5</td><td>60.5</td><td>10.0</td></tr><tr><th scope="row">w/o action</th><td>43.0</td><td>7.5</td><td>52.5</td><td>2.0</td></tr><tr><th scope="row">All-off</th><td>20.0</td><td>1.5</td><td>13.5</td><td>0.5</td></tr>
+          </tbody></table></div>
+          <div class="table-scroll"><table><caption>π<sub>0.5</sub>-Fabric · success (%)</caption><thead><tr><th scope="col">Setting</th><th scope="col">Box</th><th scope="col">Shoes</th><th scope="col">Mic</th><th scope="col">Scan</th></tr></thead><tbody>
+          <tr class="featured"><th scope="row">Full</th><td>79.0</td><td>94.5</td><td>97.5</td><td>33.0</td></tr><tr><th scope="row">w/o Common</th><td>67.0</td><td>93.5</td><td>99.0</td><td>27.5</td></tr><tr><th scope="row">w/o Private K/V</th><td>78.5</td><td>93.5</td><td>11.0</td><td>4.0</td></tr><tr><th scope="row">w/o action</th><td>59.0</td><td>87.0</td><td>98.0</td><td>19.0</td></tr><tr><th scope="row">All-off</th><td>12.5</td><td>85.0</td><td>1.0</td><td>1.0</td></tr>
+          </tbody></table></div>
+        </div>
+        <p class="media-note">Each removal uses its own batch's Full reference above, over 200 conditions per setting. All-off is a fixed-weight inference ablation that disables all three interaction paths in the trained Full policy.</p>
+        <p class="result-reading">The importance of peer information depends on the task. Action interaction has a strong effect on Box, while Private K/V matters most for π<sub>0.5</sub> on Mic and Scan. Shoes is more robust to individual removals.</p>
+      </div>
+      <div class="evidence-block shared"><div class="figure-heading"><h3>One role checkpoint, multiple tasks.</h3><p>Shared multi-task fine-tuning</p></div>
+        <div class="table-scroll"><table><caption class="sr-only">Shared pi0.5 development results</caption><thead><tr><th scope="col">Policy</th><th scope="col">Box</th><th scope="col">Shoes</th><th scope="col">Mic</th><th scope="col">Scan</th></tr></thead><tbody><tr class="featured"><th scope="row">Shared π<sub>0.5</sub>-Fabric</th><td>69.0</td><td>78.0</td><td>97.0</td><td>40.0</td></tr></tbody></table></div>
+        <p class="media-note">The same checkpoint per role serves all four tasks. Success rates are measured on the shared-policy development conditions.</p>
+      </div>
+    </div></section>
+
+    <section id="scale" class="section chapter scale" aria-labelledby="scale-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">03 / Team expansion</p><h2 id="scale-title">More arms.<br>Still complete local policies.</h2></div><p>Adding an arm introduces another complete policy and expands the peer set. Local action heads retain their dimensions; each task and team size is fine-tuned from pretrained VLAs.</p></div>
+      <figure><button class="figure-zoom" aria-label="Enlarge team composition"><img src="static/figures/team-extension.webp" loading="lazy" decoding="async" width="2400" height="807" alt="Two-, three-, and four-agent teams with Common, Private, and action interaction"><span><i data-lucide="expand"></i></span></button></figure>
+      <div id="simulation" class="subsection"><div class="figure-heading"><div><p class="eyebrow">Simulation</p><h3>From individual placement to shared-object control.</h3></div></div>
+        <div class="simulation-grid" id="simulation-grid"></div>
+        <p class="media-note">Task illustrations from recorded trajectories; quantitative policy evaluations are reported separately below.</p>
+        <div class="table-scroll compact-results"><table><caption>Larger-team simulation · π<sub>0.5</sub> · 200 conditions per setting</caption><thead><tr><th scope="col">Policy</th><th scope="col">Stack3</th><th scope="col">Frame3</th><th scope="col">Frame4</th><th scope="col">Arch4</th></tr></thead><tbody><tr><th scope="row">Independent</th><td>90.5</td><td>67.5</td><td>9.5</td><td>0.0</td></tr><tr class="featured"><th scope="row">VLA-Fabric Full</th><td>91.0</td><td>79.5</td><td>89.5</td><td>5.0</td></tr></tbody></table></div>
+        <p class="result-reading">Four-arm frame alignment shows the largest Full–Independent gap. Stack Cube supports comparable success under both settings; Arch Building probes multi-stage structural assembly.</p>
+      </div>
+      <div id="physical" class="subsection physical"><div class="figure-heading"><div><p class="eyebrow">Physical robots</p><h3>Coordination across local views.</h3></div><p>Three- and four-arm systems</p></div>
+        <div id="physical-grid" class="physical-grid"></div>
+        <p class="media-note">Global and wrist views capture each physical trial. Wrist-view surroundings are privacy blurred. Selected videos illustrate behavior; the table reports repeated physical trials.</p>
+        <div class="table-scroll compact-results"><table><caption>Physical task success (%) · 25 trials per setting · 50 demonstrations per task</caption><thead><tr><th scope="col">Policy</th><th scope="col">Basket3</th><th scope="col">Relay3</th><th scope="col">Relay4</th><th scope="col">Frame4</th></tr></thead><tbody><tr><th scope="row">Independent</th><td>72.0</td><td>16.0</td><td>40.0</td><td>36.0</td></tr><tr class="featured"><th scope="row">VLA-Fabric Full</th><td>88.0</td><td>56.0</td><td>72.0</td><td>60.0</td></tr></tbody></table></div>
+        <p class="result-reading">Local policies with learned interaction improve over independently trained policies in all four physical tasks. Object relays and shared-frame manipulation impose stronger timing and support dependencies than parallel basket placement.</p>
+      </div>
+    </div></section>
+    <section id="code" class="section code"><div class="wrap"><p class="eyebrow">VLA-Fabric Resources</p><h2>A building block for<br>networked embodied intelligence.</h2><p>Complete local policies that coordinate through learned interactions during action generation.</p><a class="pill-link" href="https://github.com/NEBULIS-Lab/VLA-Fabric">Project repository <i data-lucide="arrow-up-right"></i></a><div class="code-resources"><a href="paper/VLA-Fabric.pdf">Paper <i data-lucide="arrow-up-right"></i></a><a href="#physical">Experiments <i data-lucide="arrow-up-right"></i></a><a href="https://github.com/NEBULIS-Lab/VLA-Fabric/blob/main/CITATION.cff">Citation <i data-lucide="arrow-up-right"></i></a></div></div></section>
+  </main>
+  <footer><div class="wrap"><a class="wordmark" href="#top">VLA-Fabric</a><span>Interacting local policies for embodied intelligence.</span><a href="#top" aria-label="Back to top"><i data-lucide="arrow-up"></i></a></div></footer>
+  <dialog id="figure-dialog"><button id="figure-close" class="icon-button" aria-label="Close figure" title="Close figure"><i data-lucide="x"></i></button><img alt="Enlarged research figure"></dialog>
+  <noscript><p class="noscript">Research figures and results remain available without JavaScript. Interactive media and the 3D scene require JavaScript.</p></noscript>
+</body>
+</html>

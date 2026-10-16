@@ -1,0 +1,36 @@
+name: pi_native_v2_h50_4gpu
+gpus: 4
+microbatch_per_gpu: 1
+gradient_accumulation: 3
+global_batch: 12
+normalization: q01_q99
+prediction_horizon: 50
+execution_horizon: 25
+flow_steps: 10
+model_seed: 20260824
+stage1:
+  mode: pi_native_v2_raw_common_stage1
+  steps: 10000
+  warmup_steps: 500
+  training_seed: 20260828
+  checkpoint_every: 10000
+stage2:
+  mode: pi_native_v2_residual_action_stage2
+  steps: 40000
+  warmup_steps: 2000
+  training_seed: 20260829
+  checkpoint_every: 10000
+trainable_boundary:
+  action_expert_attention_and_norm: true
+  action_expert_base_ffw: false
+  paligemma_base_kv_and_norm: true
+  lora_and_action_projections: true
+  residual_action_parameters: true
+optimizer:
+  action_expert_peak_lr: 5.0e-6
+  paligemma_peak_lr: 3.0e-6
+  adapter_peak_lr: 5.0e-5
+  global_gradient_clip: 1.0
+memory:
+  xla_preallocate: false
+  max_peak_mib_per_rank: 44236.8

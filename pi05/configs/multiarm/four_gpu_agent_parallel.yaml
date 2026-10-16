@@ -1,0 +1,17 @@
+agent_count: 4
+agent_group: [0, 1, 2, 3]
+role_data_parallel_groups:
+  - [0]
+  - [1]
+  - [2]
+  - [3]
+candidate_operating_point:
+  team_microbatch: 6
+  gradient_accumulation: 3
+  data_parallel_teams: 1
+  global_team_batch: 18
+fallback_batches:
+  - {team_microbatch: 3, gradient_accumulation: 6}
+  - {team_microbatch: 2, gradient_accumulation: 9}
+  - {team_microbatch: 1, gradient_accumulation: 18}
+xla_preallocate: false

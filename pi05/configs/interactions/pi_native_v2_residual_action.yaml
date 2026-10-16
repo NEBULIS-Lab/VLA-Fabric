@@ -1,0 +1,27 @@
+name: pi_native_v2_residual_action
+mode: pi_native_v2_residual_action
+agents:
+  count: 2
+  complete_policies: true
+  parameter_sharing: false
+channels:
+  raw_common:
+    enabled: true
+    scope: paligemma_common_tokens
+    fusion: symmetric_operator_level
+  remote_private_kv:
+    enabled: true
+    source: peer_private_prefix
+    receiver: local_action_query
+  remote_action_residual:
+    enabled: true
+    source: "peer_action_suffix[:, -action_horizon:]"
+    softmax: separate_from_core_attention
+    projection: receiver_local_per_layer
+    gate_initialization: zero
+  final_linear_action:
+    enabled: false
+protocol:
+  prediction_horizon: 50
+  execution_horizon: 25
+  flow_steps: 10

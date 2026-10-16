@@ -1,0 +1,11 @@
+architecture_id: I1
+paper_name: Private Latent
+common_strategy: local_common
+common_kv_mode: local
+remote_kv_mode: full
+common_fusion_mode: fixed_avg
+action_token_fusion_mode: none
+decoder_mode: separate_decoders
+loss_reduction: sum
+remote_kv_scale: 1.0
+remote_kv_dropout_prob: 0.0
