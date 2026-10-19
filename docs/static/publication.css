@@ -5,9 +5,11 @@
 .publication-links{display:flex;justify-content:center;flex-wrap:wrap;gap:28px;margin-top:20px}
 .publication-links a{display:inline-flex;align-items:center;gap:6px;color:#287c79;font-size:14px;font-weight:600}
 .publication-links a:hover,.publication p a:hover{text-decoration:underline;text-underline-offset:4px}
-.header-resources{display:flex;align-items:center;gap:24px;margin-left:auto;flex-shrink:0}
+.site-header .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+.site-header .header-inner>nav[aria-label]{justify-self:center;margin:0;white-space:nowrap}
+.header-resources{display:flex;align-items:center;gap:24px;justify-self:end;flex-shrink:0}
 .header-resources .header-code{white-space:nowrap}
 .code-resources{flex-wrap:wrap}
-@media(max-width:760px){.site-header .header-inner>nav[aria-label]{display:none}.header-resources{gap:14px}.publication-links{gap:16px 22px}}
+@media(max-width:760px){.site-header .header-inner{grid-template-columns:minmax(0,1fr) auto}.site-header .header-inner>nav[aria-label]{display:none}.header-resources{gap:14px}.publication-links{gap:16px 22px}}
 @media(max-width:360px){.site-header .header-resources .header-code{display:flex}}
 @media(max-width:760px){.publication{padding:30px 0}.publication h2{font-size:21px}.publication .publication-authors{font-size:14px}}
